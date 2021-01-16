@@ -32,11 +32,13 @@ window.addEventListener('load', () => {
     document.querySelectorAll('.grid .item img').forEach( (elemento) => {
         const ruta = elemento.getAttribute('src');
         const descripcion = elemento.parentNode.parentNode.dataset.descripcion;
-        
+        const link = elemento.parentNode.parentNode.dataset.link;
+      
         elemento.addEventListener('click', () => {
             overlay.classList.add('activo');
             document.querySelector('#overlay img').src = ruta;
             document.querySelector('#overlay .descripcion').innerHTML = descripcion;
+            document.querySelector('#overlay .link').href = link;
         });
     });
 
